@@ -6,7 +6,7 @@ class Stack {
 public:
     Stack();
     Stack(const Stack& from);
-    ~Stack();
+   ~Stack();
 
     Stack& operator++();     // Префиксный
     Stack  operator++(int);  // Постфиксный
@@ -16,14 +16,13 @@ public:
 
     friend bool   operator!(const Stack&);
 
-    void push(int);
-    int  peek();
-    void pop();
+    void  push(float);
+    float peek();
+    void  pop();
 
 protected:
-
     struct Node {
-        int   val;
+        float val;
         Node* next;
     };
 

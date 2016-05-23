@@ -16,7 +16,7 @@ Queue::~Queue() {
 // Сначала реализуем функции вставки и извлечения, которые будут использоваться операторами
 
 /* Вставка элемента */
-void Queue::push(int i) {
+void Queue::push(float i) {
     // Создаем ноду
     Node* node = new Node;
     node->val = i;
@@ -41,7 +41,7 @@ void Queue::push(int i) {
 
 
 /* Просмотр первого элемента */
-int Queue::peek() {
+float Queue::peek() {
     // Проверяем очередь на пустоту
     if(!first) {
         throw std::runtime_error("No elements in Queue");
@@ -87,7 +87,7 @@ void Queue::copy(const Queue& from) {
 }
 
 
-Queue& Queue::operator+(int i) {
+Queue& Queue::operator+(float i) {
     push(i);
     return *this;
 }
@@ -107,12 +107,12 @@ Queue& Queue::operator=(const Queue& from) {
     return *this;
 }
 
-Queue& operator+=(Queue& q, int i) {
+Queue& operator+=(Queue& q, float i) {
     // Используем определенный выше оператор сложения
     return q + i;
 }
 
-Queue& operator*(Queue& q, int i) {
+Queue& operator*(Queue& q, float i) {
     // Проходим по всем нодам и умножаем каждую
     Queue::Node* node = q.first;
     while(node) {
@@ -174,7 +174,8 @@ std::ostream& operator<< (std::ostream& os, const Queue& q) {
 }
 
 std::istream& operator>> (std::istream& is, Queue& q) {
-    int cnt, t;
+    int cnt;
+    float t;
 
     // Вводим количество элементов для добавления
     is >> cnt;

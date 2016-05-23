@@ -17,7 +17,7 @@ int main() {
     // Попытка достать элемент с постфиксным оператором не сработает,
     // так как в временной копии очереди, элемента еще не будет
     try {
-        int i = (q++).peek();
+        float i = (q++).peek();
         cout << "Peeked first element: " << i << endl;
     } catch (exception& e) {
         cout << "Failed to peek element: " << e.what() << endl;
@@ -26,7 +26,7 @@ int main() {
     // Префиксное удаление и попвтка достать элемент так же не сработает
     // так как временной копии тут нет и мы сразу удаляем элемент
     try {
-        int i = (--q).peek();
+        float i = (--q).peek();
         cout << "Peeked first element: " << i << endl;
     } catch (exception& e) {
         cout << "Failed to peek element: " << e.what() << endl;
@@ -42,7 +42,7 @@ int main() {
     // Префиксное добавление и попытка достать элемент будет успешны
     // так как сначала мы элемент добавим, потом извлечем, без временной копии
     try {
-        int i = (++q).peek();
+        float i = (++q).peek();
         cout << "Peeked first element: " << i << endl;
     } catch (exception& e) {
         cout << "Failed to peek element: " << e.what() << endl;
@@ -51,7 +51,7 @@ int main() {
     // Постфиксное удаление и попытка достать элемент будет успешны
     // так как пусть элемент и удален, он все еще есть во временной копии, с которой и работает peek()
     try {
-        int i = (q--).peek();
+        float i = (q--).peek();
         cout << "Peeked first element: " << i << endl;
     } catch (exception& e) {
         cout << "Failed to peek element: " << e.what() << endl;

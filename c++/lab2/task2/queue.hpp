@@ -9,11 +9,11 @@ public:
     Queue(const Queue& from);
     ~Queue();
 
-    Queue& operator+(int i);
+    Queue& operator+(float i);
     Queue& operator=(const Queue& from);
 
-    friend Queue& operator+=(Queue& q, int i);
-    friend Queue& operator*(Queue& q, int i);
+    friend Queue& operator+=(Queue& q, float i);
+    friend Queue& operator*(Queue& q, float i);
 
     friend int operator--(Queue& q, int);
 
@@ -25,16 +25,16 @@ public:
     friend std::ostream& operator<< (std::ostream& os, const Queue& q);
     friend std::istream& operator>> (std::istream& is, Queue& q);
 
-    void push(int i);
-    int  peek();
-    void pop();
-    void clear();
+    void  push(float i);
+    float peek();
+    void  pop();
+    void  clear();
 
 protected:
     void copy(const Queue& q);
 
     struct Node {
-        int   val;
+        float val;
         Node* prev;
     };
 

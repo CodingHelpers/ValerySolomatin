@@ -22,7 +22,7 @@ Stack::~Stack() {
 // Сначала реализуем функции вставки и извлечения, которые будут использоваться операторами
 
 /* Вставка элемента */
-void Stack::push(int i) {
+void Stack::push(float i) {
     // Создаем ноду
     Node* node = new Node;
     node->val = i;
@@ -45,7 +45,7 @@ void Stack::push(int i) {
 }
 
 /* Просмотр первого элемента */
-int Stack::peek() {
+float Stack::peek() {
     // Проверяем стек на пустоту
     if(!top) {
         throw std::runtime_error("No elements in stack");
