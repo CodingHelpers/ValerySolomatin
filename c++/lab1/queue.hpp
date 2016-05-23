@@ -5,9 +5,9 @@
 
 
 struct QueueNode {
-    QueueNode(int v) : value(v), next(nullptr) {}
+    QueueNode(float v) : value(v), next(nullptr) {}
 
-    int        value;
+    float      value;
     QueueNode* next;
 };
 
@@ -16,14 +16,12 @@ public:
     Queue();
 
     // Деструктор освободит память при уничтожении объекта
-    // Он объявлен виртуальным, чтобы при наследовании не нарушися порядок вызова деструкторов
-    virtual ~Queue();
+    ~Queue();
 
-    void init();
     void clear();       //< Очищение памяти, выделенной под ноды
 
-    void push(int value);
-    int  pop();
+    void  push(float value);
+    float pop();
 
     size_t length();
 

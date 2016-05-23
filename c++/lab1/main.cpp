@@ -10,7 +10,7 @@ int main() {
     uint cnt = 5;
 
     // Переменная для хранения ввода
-    int  val;
+    float val;
 
     // Читаем ввод и закидываем введенные элементы в очередь
     cout << "Enter " << cnt << " elements: ";
@@ -22,8 +22,12 @@ int main() {
     // Выводим среднее арифметическое введенных чисел
     q.printAverage();
 
-    // Вытаскиваем первое значение
-    std::cout << "Popped " << q.pop() << endl;
+    try {
+        // Вытаскиваем первое значение
+        std::cout << "Popped " << q.pop() << endl;
+    } catch (exception& e) {
+        cout << e.what();
+    }
 
     // Выводим среднее арифметическое без первого значения
     q.printAverage();

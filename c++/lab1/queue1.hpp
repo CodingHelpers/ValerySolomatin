@@ -6,8 +6,8 @@ class Queue1 : public Queue {
 public:
     Queue1();
 
-    double average();
-    void   printAverage();
+    float average();
+    void  printAverage();
 
 };
 

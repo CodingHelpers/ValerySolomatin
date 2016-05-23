@@ -6,9 +6,9 @@ Queue1::Queue1() {
     Queue();
 }
 
-double
+float
 Queue1::average() {
-    double sum = 0.0;
+    float sum = 0.0;
 
     // Проходимся по каждому элементу
     const QueueNode* node = first;

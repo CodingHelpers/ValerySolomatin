@@ -1,20 +1,10 @@
 #include "queue.hpp"
 #include <stdexcept>
 
-Queue::Queue() : first(nullptr), last(nullptr), len(0) {
-    init();
-}
+Queue::Queue() : first(nullptr), last(nullptr), len(0) {}
 
 Queue::~Queue() {
     clear();
-}
-
-void
-Queue::init() {
-    // Если есть элементы, очищаем память
-    if(first) {
-        clear();
-    }
 }
 
 void
@@ -34,7 +24,7 @@ Queue::clear() {
 }
 
 void
-Queue::push(int value) {
+Queue::push(float value) {
     // Создаем новую ноду
     QueueNode* new_node = new QueueNode(value);
 
@@ -52,7 +42,7 @@ Queue::push(int value) {
     len++;
 }
 
-int
+float
 Queue::pop() {
     // Проверяем случай, если очередь пуста
     if(!first) {
@@ -62,7 +52,7 @@ Queue::pop() {
 
     // Сохраняем указатель на первый элемент и значение
     QueueNode* node = first;
-    int value = node->value;
+    float value = node->value;
 
     // Делаем первым элементом следующий за ним
     first = first->next;
