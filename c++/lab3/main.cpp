@@ -4,8 +4,8 @@
 using namespace std;
 
 int main() {
-    Queue<int> q;
-    Stack<int> s;
+    Queue<float> q;
+    Stack<float> s;
 
     // Проверяем работу очереди.
     // Первыми должны выйти элементы, которые вошли первыми.
@@ -17,7 +17,7 @@ int main() {
     // Извлекаем все значения, пока list не кинет исключение
     while(1) {
         try {
-            int p = q.pop();
+            float p = q.pop();
             cout << p << " <- Queue.pop:  " << q << endl;
         } catch(exception&) {
             break;
@@ -39,7 +39,7 @@ int main() {
     // Извлекаем все значения, пока list не кинет исключение
     while(1) {
         try {
-            int p = s.pop();
+            float p = s.pop();
             cout << p << " <- Stack.pop:  " << s << endl;
         } catch(exception&) {
             break;
