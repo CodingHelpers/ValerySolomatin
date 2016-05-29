@@ -5,17 +5,15 @@
 #include <iostream>
 
 // Шаблонный класс элемента списка
-template<typename T>
 struct ListNode {
-    ListNode(const T& val) : value(val), l(nullptr), r(nullptr) {}
+    ListNode(const float& val) : value(val), l(nullptr), r(nullptr) {}
 
-    T value;
-    ListNode<T>* l;
-    ListNode<T>* r;
+    float value;
+    ListNode* l;
+    ListNode* r;
 };
 
 // Шаблонный класс Список
-template<typename T>
 class List {
 public:
     List() : length(0), leftest(nullptr), rightest(nullptr) {}
@@ -26,13 +24,13 @@ public:
     }
 
     /* Объявляем чистые виртуальные функции, которые должны быть переопределены в наследованном классе */
-    virtual void push(const T& val) = 0;
-    virtual T pop() = 0;
+    virtual void push(const float& val) = 0;
+    virtual float pop() = 0;
 
     /* Добавление элемента справа, принимает константную ссылку на данные */
-    void pushRight(const T& val) {
+    void pushRight(const float& val) {
         // Создаем новую ноду
-        ListNode<T>* new_node = new ListNode<T>(val);
+        ListNode* new_node = new ListNode(val);
 
         // Если очередь пуста)
         if(!rightest) {
@@ -50,9 +48,9 @@ public:
     }
 
     /* Добавление элемента слева, принимает константную ссылку на данные */
-    void pushLeft(const T& val) {
+    void pushLeft(const float& val) {
         // Создаем новую ноду
-        ListNode<T>* new_node = new ListNode<T>(val);
+        ListNode* new_node = new ListNode(val);
 
         // Если очередь пуста)
         if(!leftest) {
@@ -70,7 +68,7 @@ public:
     }
 
     /* Извлечение значения элемента справа, возвращает константную ссылку на данные элемента */
-    const T& peekRight() const {
+    const float& peekRight() const {
         if(!rightest) {
             throw std::runtime_error("List is empty");
         }
@@ -78,7 +76,7 @@ public:
     }
 
     /* Извлечение значения элемента слева, возвращает константную ссылку на данные элемента */
-    const T& peekLeft() const {
+    const float& peekLeft() const {
         if(!leftest) {
             throw std::runtime_error("List is empty");
         }
@@ -92,7 +90,7 @@ public:
         }
 
         // Сохраняем указатель на самый правый элемент
-        ListNode<T>* tmp = rightest;
+        ListNode* tmp = rightest;
 
         // Делаем следущий элемент самым правым
         rightest = rightest->l;
@@ -109,7 +107,7 @@ public:
         }
 
         // Сохраняем указатель на самый левый элемент
-        ListNode<T>* tmp = leftest;
+        ListNode* tmp = leftest;
 
         // Делаем следущий элемент самым левым
         leftest = leftest->r;
@@ -124,8 +122,8 @@ public:
     }
 
     /* Оператор вывода списка в поток */
-    friend std::ostream& operator<< (std::ostream& os, const List<T>& lst) {
-        ListNode<T>* node = lst.leftest;
+    friend std::ostream& operator<< (std::ostream& os, const List& lst) {
+        ListNode* node = lst.leftest;
         os << "[ ";
 
         // Проходим по всем элементам от самого левого до самого правого
@@ -143,9 +141,9 @@ public:
 private:
     unsigned length;
 
-    ListNode<T>* leftest;
-    ListNode<T>* rightest;
+    ListNode* leftest;
+    ListNode* rightest;
 };
 
 
-#endif // LIST_H
+#endif // LISfloat_H

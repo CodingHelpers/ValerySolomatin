@@ -2,19 +2,18 @@
 #define STACK_H
 #include "list.hpp"
 
-template<typename T>
-class Stack : public List<T> {
+class Stack : public List {
 public:
     Stack() {}
 
-    virtual void push(const T& val) {
+    virtual void push(const float& val) {
         // Заносим элемент в список слева
         this->pushLeft(val);
     }
 
-    virtual T pop() {
+    virtual float pop() {
         // Извлекаем и сохраняем значение слева (First In Last Out)
-        T value = this->peekLeft();
+        float value = this->peekLeft();
 
         // Удаляем элемент слева
         this->popLeft();
@@ -23,4 +22,4 @@ public:
         return value;
     }
 };
-#endif // STACK_H
+#endif // SfloatACK_H

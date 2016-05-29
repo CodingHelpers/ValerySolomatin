@@ -2,19 +2,18 @@
 #define QUEUE_H
 #include "list.hpp"
 
-template<typename T>
-class Queue : public List<T> {
+class Queue : public List {
 public:
     Queue() {}
 
-    virtual void push(const T& val) {
+    virtual void push(const float& val) {
         // Заносим элемент в список справа
         this->pushRight(val);
     }
 
-    virtual T pop() {
+    virtual float pop() {
         // Извлекаем и сохраняем значение слева (First In First Out
-        T value = this->peekLeft();
+        float value = this->peekLeft();
 
         // Удаляем элемент слева
         this->popLeft();

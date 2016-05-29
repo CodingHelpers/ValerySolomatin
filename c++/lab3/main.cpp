@@ -4,8 +4,8 @@
 using namespace std;
 
 int main() {
-    Queue<float> q;
-    Stack<float> s;
+    Queue q;
+    Stack s;
 
     // Проверяем работу очереди.
     // Первыми должны выйти элементы, которые вошли первыми.
