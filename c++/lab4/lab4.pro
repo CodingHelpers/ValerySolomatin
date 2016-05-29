@@ -9,4 +9,4 @@ SOURCES += main.cpp
 
 HEADERS += \
     stack.hpp \
-    fastsort.hpp
+    quicksort.hpp
